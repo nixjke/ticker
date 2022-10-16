@@ -1,0 +1,22 @@
+$container-desktop-padding: 30px;
+$container-tablet-padding: 30px;
+$container-mobile-padding: 15px;
+
+@mixin container {
+  max-width: 1276px;
+  width: 100%;
+  margin: 0 auto;
+
+  padding-left: $container-desktop-padding;
+  padding-right: $container-desktop-padding;
+
+  @include tablet-laptop {
+    padding-left: $container-tablet-padding;
+    padding-right: $container-tablet-padding;
+  }
+
+  @include mobile {
+    padding-left: $container-mobile-padding;
+    padding-right: $container-mobile-padding;
+  }
+}
