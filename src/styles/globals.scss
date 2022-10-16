@@ -24,6 +24,12 @@ body {
   /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
+
+  background-image: url('../../public/assets/img/greencube.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 
 a {
