@@ -1,0 +1,10 @@
+.layout {
+  padding: 15px 15px 0;
+
+  width: clamp(345px, 100%, 510px);
+  height: 308px;
+
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
