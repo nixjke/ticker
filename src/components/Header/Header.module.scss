@@ -1,0 +1,16 @@
+@use 'styles/style.scss' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+.name {
+  font-size: 19px;
+  color: $color-green;
+}
+
+.time {
+  font-size: 19px;
+}
