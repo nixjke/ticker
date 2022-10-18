@@ -15,4 +15,8 @@
 .time {
   font-size: 19px;
   color: $color-white;
+
+  &[--nth-letter="2"] {
+    color: red;
+  }
 }

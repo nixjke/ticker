@@ -1,0 +1,38 @@
+@use 'styles/style.scss' as *;
+
+.selectTime {
+  background-color: $color-almost-black;
+  border-radius: 0 0 10px 10px;
+  display: inline-flex;
+
+  font-size: 17px;
+  color: $color-gray;
+  padding: 10px 15px;
+
+  > div:first-child {
+    color: $color-white;
+    margin-right: 10px;
+  }
+}
+
+.timeGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.time {
+  color: $color-gray;
+  cursor: pointer;
+  transition: all 100ms ease;
+  background-color: transparent;
+  border: none;
+  font-size: 17px;
+
+  &Selected {
+    color: $color-white;
+  }
+
+  &:hover {
+    color: $color-gray--hover;
+  }
+}
