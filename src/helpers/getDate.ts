@@ -16,7 +16,7 @@ export const useDate = (date: Date) => {
   React.useEffect(() => {
     const interval = setInterval(() => {
       setTime(dates)
-    }, 1000)
+    }, 500)
 
     return () => clearInterval(interval)
   }, [time])

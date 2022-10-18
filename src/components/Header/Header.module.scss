@@ -16,7 +16,10 @@
   font-size: 19px;
   color: $color-white;
 
-  &[--nth-letter="2"] {
-    color: red;
-  }
+  display: inline-flex;
+  gap: 6px;
+}
+
+.month:nth-child(2):nth-letter(-n+3) {
+  color: red;
 }
