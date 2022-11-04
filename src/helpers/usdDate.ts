@@ -13,7 +13,6 @@ export const useDate = (date: Date) => {
     time: `${getPadTime(date.getHours())}:${getPadTime(date.getMinutes())}`,
   }
 
-
   React.useEffect(() => {
     setTime(dates)
   }, [])
@@ -22,9 +21,8 @@ export const useDate = (date: Date) => {
     const interval = setInterval(() => {
       setTime(dates)
     }, 1000)
-
     return () => clearInterval(interval)
-  }, [time])
+  }, [date])
 
   return time
 }

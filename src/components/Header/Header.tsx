@@ -5,25 +5,19 @@ import s from './Header.module.scss'
 
 import { useWindowDimensions } from 'helpers/useWindowDimensions'
 
-import { Dates } from 'helpers/getDate'
+import { useDate } from 'helpers/usdDate'
 
 interface HeaderProps {
   name: string
-  date?: Dates
   className?: string
 }
 
-export const Header: React.FC<HeaderProps> = ({
-  name,
-  date = { day: 1, month: 'January', time: '00:00' },
-  className,
-}) => {
+export const Header: React.FC<HeaderProps> = React.memo(({ name, className }) => {
   const { width } = useWindowDimensions()
+  const date = useDate(new Date())
 
-  const { day, month, time } = date
-  
-  const formatMonth = (month: string) => {
-    if (width < 500) return month.substring(0, 3)
+  const formatMonth = (month?: string) => {
+    if (width < 500) return month?.substring(0, 3)
     return month
   }
 
@@ -31,8 +25,9 @@ export const Header: React.FC<HeaderProps> = ({
     <div className={cn(s.header, className)}>
       <div className={s.name}>{name}</div>
       <div className={s.time}>
-        <div>{day}</div> <div className={s.month}>{formatMonth(month)}</div> <div>{time}</div>
+        <div>{date?.day}</div> <div className={s.month}>{formatMonth(date?.month)}</div>
+        <div>{date?.time}</div>
       </div>
     </div>
   )
-}
+})
